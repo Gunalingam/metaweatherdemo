@@ -10,6 +10,7 @@ import {
 
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatCardModule} from '@angular/material/card';
+import {MatIconModule} from '@angular/material/icon';
 
 @NgModule({
     imports:[
@@ -20,7 +21,8 @@ import { MatCardModule} from '@angular/material/card';
         MatDialogModule,
         MatButtonModule,
         MatListModule,
-        MatCardModule
+        MatCardModule,
+        MatIconModule
     ],
     exports:[
         MatToolbarModule,
@@ -30,7 +32,8 @@ import { MatCardModule} from '@angular/material/card';
         MatDialogModule,
         MatButtonModule,
         MatListModule,
-        MatCardModule
+        MatCardModule,
+        MatIconModule
     ]
 })
 

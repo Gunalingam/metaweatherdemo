@@ -2,18 +2,21 @@
     <span>{{data.title}}</span>
     <button mat-mini-fab mat-dialog-close color='warn' class='align-close-btn'>X</button>
 </div>
-<mat-dialog-content>
-    <mat-list>
-        <mat-list-item *ngFor="let weather of data.consolidated_weather" class='align-list'>
-            <div>{{weather.applicable_date}}</div>
-            <div>
-                <span>Weather:{{weather.weather_state_name}}</span>
-                <span>Humidity:{{weather.humidity}}</span>
-                <span>Wind Speed:{{weather.wind_speed}}</span>
-                <span>Minimum Temp:{{weather.min_temp}}</span>
-                <span>Maximum Temp:{{weather.max_temp}}</span>
-                <span>Temparature:{{weather.the_temp}}</span>
-            </div>
-        </mat-list-item>
-    </mat-list>
+<mat-dialog-content class='dialog-content'>
+    <!-- <mat-list> -->
+        <mat-card *ngFor="let weather of data.consolidated_weather" class='align-list'>
+            <mat-card-subtitle>{{weather.applicable_date}}</mat-card-subtitle>
+            <mat-card-content>
+                <div>
+                    Weather:{{weather.weather_state_name}}
+                    <mat-icon svgIcon="metaweather:sn"></mat-icon>
+                </div>
+                <div>Humidity:{{weather.humidity}}</div>
+                <div>Wind Speed:{{weather.wind_speed}}</div>
+                <div>Minimum Temp:{{weather.min_temp}}</div>
+                <div>Maximum Temp:{{weather.max_temp}}</div>
+                <div>Temparature:{{weather.the_temp}}</div>
+            </mat-card-content>
+        </mat-card>
+    <!-- </mat-list> -->
 </mat-dialog-content>

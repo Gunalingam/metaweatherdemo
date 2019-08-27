@@ -10,6 +10,7 @@ import { ReactiveFormsModule} from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { WeatherpopoverComponent } from './weatherpopover/weatherpopover.component';
+import { httpInterceptorProviders } from './shared/httpinterceptor.service';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,7 @@ import { WeatherpopoverComponent } from './weatherpopover/weatherpopover.compone
     MaterialModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [httpInterceptorProviders],
   bootstrap: [AppComponent],
   entryComponents:[WeatherpopoverComponent]
 })

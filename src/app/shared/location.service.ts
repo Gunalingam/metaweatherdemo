@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient} from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 
-//Testing
+// Testing
 import { locationSearchResultMock } from '../mock-db/location-search.mock';
 import { weatherResultMock } from '../mock-db/weather-result.mock';
 
@@ -11,13 +11,17 @@ import { weatherResultMock } from '../mock-db/weather-result.mock';
 })
 export class LocationService {
 
-  constructor(private http:HttpClient) { }
+  readonly locationSearchURL = 'https://www.metaweather.com/api/location/search/?query=';
+  readonly locationWeatherURL = 'https://www.metaweather.com/api/location';
+  constructor(private http: HttpClient) { }
 
-  getlocation(searchValue:string):Observable<any>{
+  getlocation(searchValue: string): Observable<any> {
     return of(locationSearchResultMock);
+   // return this.http.get(`${this.locationSearchURL}${searchValue}`);
   }
 
-  getWeather(woeid:string):Observable<any>{
+  getWeather(woeid: string): Observable<any> {
     return of(weatherResultMock);
+   // return this.http.get(`${this.locationWeatherURL}/${woeid}`);
   }
 }
