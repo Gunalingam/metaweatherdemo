@@ -1,0 +1,10 @@
+<div class='search'>
+    <mat-form-field>
+        <input type='text' matInput [formControl]='searchInput' [placeholder]='Search City' novalidate [matAutocomplete]='mysearchlist'>
+    </mat-form-field>
+    <mat-autocomplete #mysearchlist [displayWith]='displayFn' (optionSelected)="onCitySelected($event)">
+        <mat-option *ngFor =" let option of CitySearchList$ | async" [value]="option">
+            {{option.title}}
+        </mat-option>
+    </mat-autocomplete>
+</div>
