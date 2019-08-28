@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { LocationService } from '../shared/location.service';
 import { Observable} from 'rxjs';
@@ -6,6 +6,8 @@ import { debounceTime, distinctUntilChanged} from 'rxjs/operators';
 import { MatDialog } from '@angular/material/dialog';
 
 import { WeatherpopoverComponent } from '../weatherpopover/weatherpopover.component';
+import {MatPaginator} from '@angular/material/paginator';
+import {MatTableDataSource} from '@angular/material/table';
 
 @Component({
   selector: 'app-dashboard-search',
@@ -17,12 +19,20 @@ export class DashboardSearchComponent implements OnInit {
   searchInput = new FormControl('');
   CitySearchList$: Observable<any>;
   weatherForSelectedCity = [];
+  weatherData:MatTableDataSource<any>;
+  displayedColumns=['title','location_type','latt_long'];
+  @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
   constructor(private locationService: LocationService, private dialog: MatDialog) { }
 
   ngOnInit() {
+    this.locationService.getlocation("san").subscribe((value)=>{
+      this.weatherData = new MatTableDataSource<any>(value);
+      this.weatherData.paginator = this.paginator;
+    });
+
     this.searchInput.valueChanges.pipe(debounceTime(1000), distinctUntilChanged()).subscribe((value) => {
       if (value) {
-        this.CitySearchList$ = this.locationService.getlocation(value);
+        this.weatherData.filter = value.trim().toLowerCase();
       }
     });
   }
@@ -32,7 +42,7 @@ export class DashboardSearchComponent implements OnInit {
   }
 
   onCitySelected($event) {
-    this.locationService.getWeather($event.option.value.woeid).subscribe((result => {
+    this.locationService.getWeather($event.woeid).subscribe((result => {
       this.weatherForSelectedCity = result;
       this.openWeatherModal(result);
     }));

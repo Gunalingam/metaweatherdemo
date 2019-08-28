@@ -6,25 +6,25 @@ export const icon = [{
 {
     namespace:'metaweather',
     name:'sl',
-    url:'https://www.metaweather.com/static/img/weather/sl.svg'
+    url:'./assets/sl.svg'
 },
 {
     namespace:'metaweather',
     name:'h',
-    url:'https://www.metaweather.com/static/img/weather/h.svg'
+    url:'./assets/h.svg'
 },
 {
     namespace:'metaweather',
     name:'t',
-    url:'https://www.metaweather.com/static/img/weather/t.svg'
+    url:'./assets/t.svg'
 },{
     namespace:'metaweather',
     name:'hr',
-    url:'https://www.metaweather.com/static/img/weather/hr.svg'
+    url:'./assets/hr.svg'
 },{
     namespace:'metaweather',
     name:'lr',
-    url:'https://www.metaweather.com/static/img/weather/lr.svg'
+    url:'./assets/lr.svg'
 },{
     namespace:'metaweather',
     name:'s',
@@ -32,13 +32,13 @@ export const icon = [{
 },{
     namespace:'metaweather',
     name:'hc',
-    url:'https://www.metaweather.com/static/img/weather/hc.svg'
+    url:'./assets/hc.svg'
 },{
     namespace:'metaweather',
     name:'lc',
-    url:'https://www.metaweather.com/static/img/weather/lc.svg'
+    url:'./assets/lc.svg'
 },{
     namespace:'metaweather',
     name:'c',
-    url:'https://www.metaweather.com/static/img/weather/c.svg'
+    url:'./assets/c.svg'
 }];

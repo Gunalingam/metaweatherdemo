@@ -11,9 +11,11 @@ import {
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatCardModule} from '@angular/material/card';
 import {MatIconModule} from '@angular/material/icon';
+import {MatTableModule} from '@angular/material/table';
+import {MatPaginatorModule} from '@angular/material/paginator';
 
 @NgModule({
-    imports:[
+    imports: [
         MatToolbarModule,
         MatAutocompleteModule,
         MatFormFieldModule,
@@ -22,9 +24,11 @@ import {MatIconModule} from '@angular/material/icon';
         MatButtonModule,
         MatListModule,
         MatCardModule,
-        MatIconModule
+        MatIconModule,
+        MatTableModule,
+        MatPaginatorModule
     ],
-    exports:[
+    exports: [
         MatToolbarModule,
         MatAutocompleteModule,
         MatFormFieldModule,
@@ -33,7 +37,9 @@ import {MatIconModule} from '@angular/material/icon';
         MatButtonModule,
         MatListModule,
         MatCardModule,
-        MatIconModule
+        MatIconModule,
+        MatTableModule,
+        MatPaginatorModule
     ]
 })
 

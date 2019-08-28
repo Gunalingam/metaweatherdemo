@@ -9,7 +9,7 @@
             <mat-card-content>
                 <div>
                     Weather:{{weather.weather_state_name}}
-                    <mat-icon svgIcon="metaweather:sn"></mat-icon>
+                    <mat-icon svgIcon="metaweather:{{weather.weather_state_abbr}}"></mat-icon>
                 </div>
                 <div>Humidity:{{weather.humidity}}</div>
                 <div>Wind Speed:{{weather.wind_speed}}</div>

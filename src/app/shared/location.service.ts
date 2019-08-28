@@ -20,7 +20,8 @@ export class LocationService {
    // return this.http.get(`${this.locationSearchURL}${searchValue}`);
   }
 
-  getWeather(woeid: string): Observable<any> {
+  getWeather(woeid:any): Observable<any> {
+    return of(weatherResultMock.filter((val)=>{return woeid === val.woeid;})[0]);
     return of(weatherResultMock);
    // return this.http.get(`${this.locationWeatherURL}/${woeid}`);
   }
