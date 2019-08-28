@@ -1,15 +1,26 @@
 import { TestBed, async } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
+import { WeatherpopoverComponent } from './weatherpopover/weatherpopover.component';
+import { MaterialModule} from './app-material.module';
+import { DashboardSearchComponent } from './dashboard-search/dashboard-search.component';
+import { ReactiveFormsModule} from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
-        RouterTestingModule
+        ReactiveFormsModule,
+        RouterTestingModule,
+        MaterialModule,
+        HttpClientModule
       ],
       declarations: [
-        AppComponent
+        AppComponent,
+        DashboardSearchComponent,
+        WeatherpopoverComponent
       ],
     }).compileComponents();
   }));
@@ -20,16 +31,9 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'metaweather'`, () => {
+  it(`should have as title 'Metaweather'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
     expect(app.title).toEqual('metaweather');
-  });
-
-  it('should render title in a h1 tag', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('Welcome to metaweather!');
   });
 });

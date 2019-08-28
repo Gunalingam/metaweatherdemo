@@ -1,6 +1,10 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { DashboardSearchComponent } from './dashboard-search.component';
+import { MaterialModule} from '../app-material.module';
+import { ReactiveFormsModule} from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 describe('DashboardSearchComponent', () => {
   let component: DashboardSearchComponent;
@@ -8,9 +12,16 @@ describe('DashboardSearchComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ DashboardSearchComponent ]
-    })
-    .compileComponents();
+      imports: [
+        BrowserAnimationsModule,
+        MaterialModule,
+        ReactiveFormsModule,
+        HttpClientModule
+      ],
+      declarations: [
+        DashboardSearchComponent
+      ],
+    }).compileComponents();
   }));
 
   beforeEach(() => {
